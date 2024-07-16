@@ -16,17 +16,21 @@
 	<body>
 		<h1>Cryptography Calculator</h1>
 		<div id="hash-div" class="row">
-			<label for="hash-input">Value to hash</label>
-			<input type="text" id="hash-input" name="hash input why is name different from id"> </input>
+			<input type="text" id="hash-input" placeholder="String to hash"> </input>
 			<button id="hash-button">Compute hash</button>
 			<div id="hash-output">Your hash here</div>
 		</div>
+		<div id="eas-enc" class="row">
+			<input type="text" id="enc-key" placeholder="Key"> </input>
+			<input type="text" id="enc-input" placeholder="Plaintext"> </input>
+			<button id="enc-button">Encrypt</button>
+			<div id="enc-output">Ciphertext here</div>
+		</div>
 		<div id="eas-div" class="row">
-			<label for="hash-input">Value to hash</label>
-			<input type="text" id="dec-key" name=""> </input>
-			<input type="text" id="dec-input" name="hash input why is name different from id"> </input>
-			<button id="dec-button">Compute hash</button>
-			<div id="dec-output">Your hash here</div>
+			<input type="text" id="dec-key" placeholder="Key"> </input>
+			<input type="text" id="dec-input" placeholder="Ciphertext"> </input>
+			<button id="dec-button">Decrypt</button>
+			<div id="dec-output">Plaintext here</div>
 		</div>
 		<script src="crypto.js" type="module"></script>
 	</body>
