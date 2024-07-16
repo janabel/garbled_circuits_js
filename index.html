@@ -32,6 +32,24 @@
 			<button id="dec-button">Decrypt</button>
 			<div id="dec-output">Plaintext here</div>
 		</div>
-		<script src="crypto.js" type="module"></script>
+		<!-- <script src="crypto.js" type="module"></script> -->
+        <script src="./node_modules/crypto-js/crypto-js.js"></script>
+  <script>
+    function sha256Wrapper(x) {
+      return CryptoJS.SHA256(x).toString(CryptoJS.enc.Hex);
+    }
+
+    document.getElementById("hash-button").addEventListener("click", function () {
+      const inputValue = document.getElementById("hash-input").value;
+      
+      if (!inputValue) {
+        document.getElementById("hash-output").innerText = "Please enter a string to hash.";
+        return;
+      }
+
+      const result = sha256Wrapper(inputValue);
+      document.getElementById("hash-output").innerText = `The result is: ${result}`;
+    });
+  </script>
 	</body>
 </html>

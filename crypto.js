@@ -1,9 +1,11 @@
 // import { sha256 } from "./node_modules/crypto-js";
-import { sha256 } from "./node_modules/crypto-js/sha256.js";
+// import { sha256 } from "./node_modules/crypto-js/sha256.js";
+import CryptoJS from "./node_modules/crypto-js/sha-256";
 
 function sha256Wrapper(x) {
   // just practicing function syntax : ). computes sha256
-  return sha256(x);
+  //   return sha256(x);
+  return CryptoJS.SHA256(x).toString();
 }
 
 document.getElementById("hash-button").addEventListener("click", function () {
@@ -22,7 +24,7 @@ document.getElementById("hash-button").addEventListener("click", function () {
   }
 
   // Compute a function (e.g., square the number)
-  const result = sha256(number);
+  const result = sha256Wrapper(number);
 
   // Display the result
   document.getElementById("hash-output").innerText = `The result is: ${result}`;
