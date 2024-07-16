@@ -1,14 +1,33 @@
 <html>
-<head>
-<script src="crypto.js" type="module"> </script>
-</head>
-<body>
-<h1> Cryptography Calculator </h1>
-
-<label for="hash-input">Value to hash</label>
-<input type="text" id="hash-input" name="hash input why is name different from id"> </input>
-<button id="hash-button">Compute hash</button>
-<div id="hash-output"> Your hash here </div>
-</body>
+	<head>
+		<style>
+			.row {
+				margin-bottom: 20px;
+			}
+			.input-box, .output-box {
+				width: 100px;
+				margin-right: 10px;
+			}
+			.button {
+				margin-right: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Cryptography Calculator</h1>
+		<div id="hash-div" class="row">
+			<label for="hash-input">Value to hash</label>
+			<input type="text" id="hash-input" name="hash input why is name different from id"> </input>
+			<button id="hash-button">Compute hash</button>
+			<div id="hash-output">Your hash here</div>
+		</div>
+		<div id="eas-div" class="row">
+			<label for="hash-input">Value to hash</label>
+			<input type="text" id="dec-key" name=""> </input>
+			<input type="text" id="dec-input" name="hash input why is name different from id"> </input>
+			<button id="dec-button">Compute hash</button>
+			<div id="dec-output">Your hash here</div>
+		</div>
+		<script src="crypto.js"></script>
+	</body>
 </html>
-
