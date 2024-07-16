@@ -1,8 +1,8 @@
-import sha256 from "crypto-js/sha256";
+import { sha256 } from "./node_modules/crypto-js";
 
 function sha256Wrapper(x) {
   // just practicing function syntax : ). computes sha256
-  return sha256(x);
+  return sha256(input);
 }
 
 document.getElementById("hash-button").addEventListener("click", function () {

@@ -1,0 +1,15 @@
+{
+  "name": "garbled_circuits_js",
+  "version": "1.0.0",
+  "description": "implementation of yao's garbled circuits in javascript",
+  "main": "crypto.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "crypto-js": "^4.2.0"
+  }
+}
