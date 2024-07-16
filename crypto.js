@@ -5,7 +5,6 @@ function sha256Wrapper(x) {
   return sha256(x);
 }
 
-// script.js
 document.getElementById("hash-button").addEventListener("click", function () {
   // Get the value from the textbox
   const inputValue = document.getElementById("hash-input").value;
@@ -25,5 +24,5 @@ document.getElementById("hash-button").addEventListener("click", function () {
   const result = sha256(number);
 
   // Display the result
-  document.getElementById("result").innerText = `The result is: ${result}`;
+  document.getElementById("hash-output").innerText = `The result is: ${result}`;
 });
