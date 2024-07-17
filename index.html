@@ -15,11 +15,15 @@
 	</head>
 	<body>
 		<h1>Cryptography Calculator</h1>
+
+		<h2>Hashing</h2>
 		<div id="hash-div" class="row">
 			<input type="text" id="hash-input" placeholder="String to hash"> </input>
 			<button id="hash-button">Compute hash</button>
 			<div id="hash-output">Your hash here</div>
 		</div>
+
+		<h2>AES</h2>
 		<div id="eas-enc" class="row">
 			<input type="text" id="enc-key" placeholder="Key"> </input>
 			<input type="text" id="enc-input" placeholder="Plaintext"> </input>
@@ -32,6 +36,21 @@
 			<button id="dec-button">Decrypt</button>
 			<div id="dec-output">Plaintext here</div>
 		</div>
+
+		<h2>El Gamal</h2>
+		<div id="pub-enc" class="row">
+			<input type="text" id="pub-key" placeholder="Key"> </input>
+			<input type="text" id="pub-input" placeholder="Plaintext"> </input>
+			<button id="enc-button">Encrypt</button>
+			<div id="enc-output">Ciphertext here</div>
+		</div>
+		<div id="pub-dec" class="row">
+			<input type="text" id="enc-key" placeholder="Key"> </input>
+			<input type="text" id="enc-input" placeholder="Plaintext"> </input>
+			<button id="enc-button">Decrypt</button>
+			<div id="enc-output">Plaintext here</div>
+		</div>
+
 		<!-- <script src="crypto.js" type="module"></script> -->
         <script src="./node_modules/crypto-js/crypto-js.js"></script>
   <script src="index.js">

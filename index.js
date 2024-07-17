@@ -1,6 +1,6 @@
 function sha256Wrapper(x) {
-    return CryptoJS.SHA256(x).toString(CryptoJS.enc.Hex);
-  }
+  return CryptoJS.SHA256(x).toString(CryptoJS.enc.Hex);
+}
 
   document.getElementById("hash-button").addEventListener("click", function () {
     const inputValue = document.getElementById("hash-input").value;
@@ -13,3 +13,5 @@ function sha256Wrapper(x) {
     const result = sha256Wrapper(inputValue);
     document.getElementById("hash-output").innerText = `The result is: ${result}`;
   });
+
+ 
