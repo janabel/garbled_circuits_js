@@ -58,16 +58,18 @@
 			<div id="elg-dec-output">Plaintext here</div>
 		</div>
 
-		<script src="./index.js"></script>
-		<script src="./aes.js"></script>
-		<script src="./elgamal_calculator.js"></script>
-		<script src="./elgamal.js"></script>
-        <script src="../node_modules/crypto-js/crypto-js.js"></script>
-		<script src="../node_modules/elgamal/src/elgamal.js"></script>
-		<!-- <script src="../node_modules/jsbn"></script> -->
-		<!-- <script src="../node_modules/elgamal/src/models/decrypted-value.js"></script> -->
-		<!-- <script src="../node_modules/elgamal/src/models/encrypted-value.js"></script> -->
-		<!-- <script src="../node_modules/elgamal/src/errors.js"></script> -->
-		<!-- <script src="../node_modules/elgamal/src/utils.js"></script> -->
+		<script type="module" src="../node_modules/crypto-js/crypto-js.js" ></script>
+		<!-- <script src="../node_modules/elgamal/src/elgamal.js" ></script> -->
+		<!-- <script src="../node_modules/jsbn/index.js" ></script> -->
+		<!-- <script src="../node_modules/elgamal/src/models/decrypted-value.js" ></script>
+		<script src="../node_modules/elgamal/src/models/encrypted-value.js" ></script>
+		<script src="../node_modules/elgamal/src/errors.js" ></script>
+		<script src="../node_modules/elgamal/src/utils.js" ></script> -->
+		 
+		<script type="module" src="./sha256.js" ></script>
+		<script type="module" src="./aes.js" ></script>
+		<script type="module" src="./elgamal.mjs"></script>
+
+		<script src="bundle.js" type="module"></script>
 	</body>
 </html>
