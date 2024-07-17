@@ -13,3 +13,7 @@ make OT [jbel]:
 symmetric key:
 
 - use AES libraries
+
+- get elgamal to work with keygen
+- implement elgamal
+- dont forget to switch to node 16 (done)
