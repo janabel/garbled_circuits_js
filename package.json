@@ -4,7 +4,8 @@
   "description": "implementation of yao's garbled circuits in javascript",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "npx parcel temp/index.html"
   },
   "repository": {
     "type": "git",
