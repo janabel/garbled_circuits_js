@@ -1,0 +1,33 @@
+{
+  "name": "garbled_circuits_js",
+  "version": "1.0.0",
+  "description": "implementation of yao's garbled circuits in javascript",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janabel/garbled_circuits_js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/janabel/garbled_circuits_js/issues"
+  },
+  "homepage": "https://github.com/janabel/garbled_circuits_js#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "crypto-js": "^4.2.0",
+    "depd": "^2.0.0",
+    "elgamal": "^0.3.0",
+    "express": "^4.19.2",
+    "finalhandler": "^1.2.0",
+    "merge-descriptors": "^2.0.0",
+    "safe-buffer": "^5.2.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
