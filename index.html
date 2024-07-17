@@ -38,17 +38,24 @@
 		</div>
 
 		<h2>ElGamal</h2>
-		<div id="pub-enc" class="row">
-			<input type="text" id="pub-enc-key" placeholder="Key"> </input>
-			<input type="text" id="pub-enc-input" placeholder="Plaintext"> </input>
-			<button id="pub-enc-button">Encrypt</button>
-			<div id="pub-enc-output">Ciphertext here</div>
+		<div id="key-gen" class="row">
+			<button id="key-gen-button">Generate your key</button>
+			<div id="private-key">Your private key here</div>
+			<div id="public-key">Your public key here</div>
 		</div>
-		<div id="pub-dec" class="row">
-			<input type="text" id="pub-dec-key" placeholder="Key"> </input>
-			<input type="text" id="pub-dec-input" placeholder="Plaintext"> </input>
-			<button id="pub-dec-button">Decrypt</button>
-			<div id="pub-dec-output">Plaintext here</div>
+
+		<div id="elg-enc" class="row">
+			<input type="text" id="pub-key" placeholder="Public Key"> </input>
+			<input type="text" id="pub-enc-input" placeholder="Plaintext"> </input>
+			<button id="elg-enc-button">Encrypt</button>
+			<div id="elg-enc-output">Ciphertext here</div>
+		</div>
+
+		<div id="elg-dec" class="row">
+			<input type="text" id="private-key" placeholder="Private Key"> </input>
+			<input type="text" id="private-dec-input" placeholder="Ciphtertext"> </input>
+			<button id="elg-dec-button">Decrypt</button>
+			<div id="elg-dec-output">Plaintext here</div>
 		</div>
 
 		<!-- <script src="crypto.js" type="module"></script> -->
