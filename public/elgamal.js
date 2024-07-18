@@ -103,3 +103,8 @@ elGamalDecryptButton.addEventListener("click", async function () {
   console.log("message is " + message.toString());
   // decOutput.innerText = "Your plaintext is: " + message.toString();
 });
+
+const elGamalTestButton = document.getElementById("elg-test-button");
+elGamalTestButton.addEventListener("click", function() {
+  console.log("El gamal testing");
+})
