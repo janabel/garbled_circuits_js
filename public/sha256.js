@@ -1,3 +1,5 @@
+import CryptoJS from "../node_modules/crypto-js";
+
 function sha256Wrapper(x) {
   return CryptoJS.SHA256(x).toString(CryptoJS.enc.Hex);
 }
