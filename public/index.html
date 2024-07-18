@@ -39,9 +39,9 @@
 
 		<h2>ElGamal</h2>
 		<div id="key-gen" class="row">
-			<button id="key-gen-button">Generate your key</button>
-			<div id="private-key">Your private key here</div>
-			<div id="public-key">Your public key here</div>
+			<button id="keygen-button">Generate your key</button>
+			<div id="keygen-out-priv">Your private key: </div>
+			<div id="keygen-out-public">Your public key</div>
 		</div>
 
 		<div id="elg-enc" class="row">
@@ -58,16 +58,10 @@
 			<div id="elg-dec-output">Plaintext here</div>
 		</div>
 
-		<script src="./index.js"></script>
-		<script src="./aes.js"></script>
-        <script src="../node_modules/crypto-js/crypto-js.js"></script>
-		<script src="../node_modules/elgamal/src/elgamal.js"></script>
-		<!-- <script src="../node_modules/jsbn"></script>
-		<script src="../node_modules/elgamal/src/models/decrypted-value.js"></script>
-		<script src="../node_modules/elgamal/src/models/encrypted-value.js"></script>
-		<script src="../node_modules/elgamal/src/errors.js"></script>
-		<script src="../node_modules/elgamal/src/utils.js"></script>
-
-		 -->
+		<script type="module" src="./sha256.js"></script>
+		<script type="module" src="./elgamal.js"></script>
+		<script type="module" src="./aes.js"></script>
+        <script type="module" src="../node_modules/crypto-js/crypto-js.js"></script>
+		<script type="module" src="../node_modules/elgamal/src/elgamal.js"></script>
 	</body>
 </html>
