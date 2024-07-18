@@ -91,55 +91,8 @@ elGamalDecryptButton.addEventListener("click", async function () {
     return;
   }
 
-  console.log("type of a is " + typeof ciphertextProcessed.a);
-  console.log(ciphertextProcessed.a.toString());
-  console.log(ciphertextProcessed.b.toString());
-
-  console.log("modpow?");
-  console.log(eg.g.modPow(eg.x, eg.p));
-  console.log(eg.y);
-  console.log("modpow???");
-  console.log(typeof(eg.g));
-  console.log(eg.g.modPow);
-  //pubKey = eg.g.modPow(privKeyInput, eg.p);
-  console.log("modpow.");
   temp_eg = new elgamal(eg.p, eg.g, 0, privKeyInput); // placeholder public key
   console.log("temp_eg = " + temp_eg);
   const message = await temp_eg.decryptAsync(ciphertextProcessed); // =(a,b), where a = g^r is the blinding factor, b = g^rx * m is the encryption
-  const message2 = await eg.decryptAsync(ciphertextProcessed);
-  // const fakemsg = new decryptedvalue("10");
-  console.log(message);
-  console.log("message is " + message.toString());
-  console.log("message2 is " + message2.toString());
-  // decOutput.innerText = "Your plaintext is: " + message.toString();
+  decOutput.innerText = "Your plaintext is: " + message.toString();
 });
-
-const elGamalTestButton = document.getElementById("elg-test-button");
-elGamalTestButton.addEventListener("click", async function() {
-  console.log("El gamal testing");
-  testEg = await elgamal.generateAsync(44);
-  console.log(testEg);
-  const msg = "hi";
-  const cpt = await testEg.encryptAsync(msg);
-  console.log("cpt string");
-  console.log(cpt.a);
-  console.log(cpt.b);
-  const aString = cpt.a.toString();
-  const bString = cpt.b.toString();
-  const aBigInt = new jsbn.BigInteger(aString.trim());
-  const bBigInt = new jsbn.BigInteger(bString.trim());
-  console.log(cpt.a.toString());
-  console.log(cpt.b.toString());
-  console.log("new bigints");
-  console.log(aBigInt);
-  console.log(bBigInt);
-  const cpt2 = new encryptedvalue(aBigInt, bBigInt);
-  const msgDec = await testEg.decryptAsync(cpt);
-  const msgDec2 = await testEg.decryptAsync(cpt2);
-  console.log("done with test");
-  console.log(cpt);
-  console.log(msgDec);
-  console.log(msgDec.bi);
-  console.log(msgDec.toString());
-  console.log(msgDec2.toString());
-})
