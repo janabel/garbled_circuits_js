@@ -64,8 +64,8 @@ async function parseOrderedPair(pairString) {
   return encryptedValue;
 }
 
-const elGamaDecryptButton = document.getElementById("elg-dec-button");
-elGamaDecryptButton.addEventListener("click", async function () {
+const elGamalDecryptButton = document.getElementById("elg-dec-button");
+elGamalDecryptButton.addEventListener("click", async function () {
   const decOutput = document.getElementById("elg-dec-output");
 
   if (typeof eg === "undefined") {
@@ -99,6 +99,7 @@ elGamaDecryptButton.addEventListener("click", async function () {
   console.log("temp_eg = " + temp_eg);
   const message = await temp_eg.decryptAsync(ciphertextProcessed); // =(a,b), where a = g^r is the blinding factor, b = g^rx * m is the encryption
   // const fakemsg = new decryptedvalue("10");
+  console.log(message);
   console.log("message is " + message.toString());
   // decOutput.innerText = "Your plaintext is: " + message.toString();
 });
