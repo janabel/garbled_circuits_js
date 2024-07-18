@@ -105,6 +105,12 @@ elGamalDecryptButton.addEventListener("click", async function () {
 });
 
 const elGamalTestButton = document.getElementById("elg-test-button");
-elGamalTestButton.addEventListener("click", function() {
+elGamalTestButton.addEventListener("click", async function() {
   console.log("El gamal testing");
+  testEg = await elgamal.generateAsync(256);
+  const msg = "hello";
+  const cpt = await testEg.encryptAsync(msg);
+  const msgDec = await testEg.decryptAsync(cpt);
+  console.log("done with test");
+  console.log(msgDec);
 })
