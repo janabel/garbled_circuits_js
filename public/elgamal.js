@@ -9,7 +9,7 @@ let eg = undefined; // to be remembered
 
 const keygenButton = document.getElementById("keygen-button");
 keygenButton.addEventListener("click", async function () {
-  eg = await elgamal.generateAsync(256); // Recommended way of initialization
+  eg = await elgamal.generateAsync(30); // Recommended way of initialization
 
   const privKeyOutput = await eg.x;
   const publicKeyOutput = await eg.y;
@@ -98,9 +98,11 @@ elGamalDecryptButton.addEventListener("click", async function () {
   temp_eg = new elgamal(eg.p, eg.g, 0, privKeyInput); // placeholder public key
   console.log("temp_eg = " + temp_eg);
   const message = await temp_eg.decryptAsync(ciphertextProcessed); // =(a,b), where a = g^r is the blinding factor, b = g^rx * m is the encryption
+  const message2 = await eg.decryptAsync(ciphertextProcessed);
   // const fakemsg = new decryptedvalue("10");
   console.log(message);
   console.log("message is " + message.toString());
+  console.log("message2 is " + message2.toString());
   // decOutput.innerText = "Your plaintext is: " + message.toString();
 });
 
