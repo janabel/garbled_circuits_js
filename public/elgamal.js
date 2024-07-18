@@ -98,8 +98,12 @@ elGamalDecryptButton.addEventListener("click", async function () {
   console.log("modpow?");
   console.log(eg.g.modPow(eg.x, eg.p));
   console.log(eg.y);
-  pubKey = eg.g.modPow(privKeyInput, eg.p);
-  temp_eg = new elgamal(eg.p, eg.g, pubKey, privKeyInput); // placeholder public key
+  console.log("modpow???");
+  console.log(typeof(eg.g));
+  console.log(eg.g.modPow);
+  //pubKey = eg.g.modPow(privKeyInput, eg.p);
+  console.log("modpow.");
+  temp_eg = new elgamal(eg.p, eg.g, 0, privKeyInput); // placeholder public key
   console.log("temp_eg = " + temp_eg);
   const message = await temp_eg.decryptAsync(ciphertextProcessed); // =(a,b), where a = g^r is the blinding factor, b = g^rx * m is the encryption
   const message2 = await eg.decryptAsync(ciphertextProcessed);
