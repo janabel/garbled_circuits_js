@@ -26,6 +26,7 @@
     "express": "^4.19.2",
     "finalhandler": "^1.2.0",
     "inherits": "^2.0.4",
+    "jsbn": "^1.1.0",
     "merge-descriptors": "^2.0.0",
     "safe-buffer": "^5.2.1"
   },
