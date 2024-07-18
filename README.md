@@ -4,6 +4,12 @@ implementation of yao's garbled circuits in javascript
 
 ---
 
+to do it type
+
+npm run dev
+
+---
+
 - SHA 256 hash function - find javascript library. ok nice we did it
 
 make OT [jbel]:
