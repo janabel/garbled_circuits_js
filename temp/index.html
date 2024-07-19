@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
   <head>
     <style>
       .row {
@@ -26,5 +26,35 @@
     </div>
 
     <script type="module" src="./elgamaltest.js"></script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horizontal Blocks with Flexbox</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: space-around; /* Adjusts spacing around the blocks */
+      }
+      .block {
+        flex: 1;
+        /* width: 30%; */
+        padding: 20px;
+        background-color: lightblue;
+        text-align: center;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="block">Block 1</div>
+      <div class="block">Block 2</div>
+      <div class="block">Block 3</div>
+    </div>
   </body>
 </html>

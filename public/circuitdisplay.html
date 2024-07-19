@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Circuit Visualization</title>
+    <style>
+      svg {
+        border: 1px solid #ccc;
+        width: 100%;
+        height: 600px;
+      }
+      .gate {
+        fill: lightblue;
+        stroke: black;
+        stroke-width: 2px;
+      }
+      .wire {
+        stroke: black;
+        stroke-width: 2px;
+        stroke-opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <svg id="circuit-svg"></svg>
+    <script type="module" src="circuitvisualization.js"></script>
+  </body>
+</html>

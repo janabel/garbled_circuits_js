@@ -11,9 +11,27 @@
 			.button {
 				margin-right: 10px;
 			}
+			.circuit-image {
+				width: 80%;
+      			height: auto;
+			}
+			.container {
+        display: flex;
+        justify-content: space-around; /* Adjusts spacing around the blocks */
+      }
+      .block {
+        flex: 1;
+        /* width: 30%; */
+        padding: 20px;
+        background-color: lightblue;
+        text-align: center;
+        border: 1px solid black;
+      }
 		</style>
 	</head>
 	<body>
+	<div class="container">
+		<div class="block">
 		<h1>Cryptography Calculator [:¨:]</h1>
 
 		<h2>Hashing</h2>
@@ -57,6 +75,12 @@
 			<button id="elg-dec-button">Decrypt</button>
 			<div id="elg-dec-output">Plaintext here</div>
 		</div>
+		</div>
+		<div class="block">
+			<h1>Circuit Diagram</h1>
+  			<img src="circuit_diagram.png" alt="Diagram of circuit" class="circuit-image">
+		</div>
+	</div>
 
 		<script type="module" src="./sha256.js"></script>
 		<script type="module" src="./elgamal.js"></script>
