@@ -5,7 +5,8 @@ document.getElementById("enc-button").addEventListener("click", function () {
   const encKey = document.getElementById("enc-key").value;
   const encText = document.getElementById("enc-input").value;
   const encrypted = CryptoJS.AES.encrypt(encText, encKey).toString();
-  document.getElementById("enc-output").innerText = encrypted;
+  document.getElementById("enc-output").innerText =
+    "Your ciphertext is: " + encrypted;
 });
 
 document.getElementById("dec-button").addEventListener("click", function () {
@@ -17,5 +18,6 @@ document.getElementById("dec-button").addEventListener("click", function () {
   );
   console.log("Moving on down");
   console.log(decrypted);
-  document.getElementById("dec-output").innerText = decrypted;
+  document.getElementById("dec-output").innerText =
+    "Your plaintext is: " + decrypted;
 });
