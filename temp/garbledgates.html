@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Garbled Gate Tables</title>
+
+    <style>
+      tabletitle {
+        font-size: 24px;
+        margin: 12px;
+      }
+      table {
+        width: 50%;
+        border-collapse: collapse;
+        margin: 24px;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+        font-size: 18px;
+      }
+      button {
+        font-size: 16px;
+      }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <script type="text/javascript">
+      MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          macros: {
+            hash: "{\\#}",
+          },
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <button id="generatePasswordsButton">Generate passwords</button>
+    <div id="passwordStatus">Please generate passwords</div>
+    <button id="computeButton">
+      Compute table values to display tables below
+    </button>
+    <h2>Garbled Gate Table</h2>
+
+    <script type="module" src="generatepasswords.js"></script>
+    <script type="module" src="gate.js"></script>
+    <script type="module" src="computetables.js"></script>
+  </body>
+</html>
