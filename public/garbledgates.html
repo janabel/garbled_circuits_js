@@ -28,6 +28,9 @@
       button {
         font-size: 16px;
       }
+      .row {
+        margin-bottom: 20px;
+      }
     </style>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script
@@ -53,11 +56,18 @@
     </script>
   </head>
   <body>
-    <div id="password-button-row">
-      <button id="generatePasswordsButton">Generate passwords</button>
+    <div id="password-button-row" class="row">
+      <button id="generate-passwords-button">Generate passwords</button>
       <div id="elg-dec-output">Plaintext here</div>
       <div id="password-status">Please generate passwords</div>
     </div>
+
+    <div id="display-your-passwords-button-row" class="row">
+			<input type="text" id="your-bits" placeholder="Your bits (b0, b1, b2) (enter as ordered pair)"> </input>
+      <button id="display-your-passwords-button">Get my passwords</button>
+      <div id="your-passwords">Your passwords will appear here</div>
+    </div>
+
     <button id="compute-button">
       Compute table values to display tables below
     </button>

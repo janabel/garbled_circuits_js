@@ -38,7 +38,7 @@ function generateRandom32BitInteger() {
   return BigInt("0x" + hexString);
 }
 
-generatePasswordsButton = document.getElementById("generat-passwords-button");
+generatePasswordsButton = document.getElementById("generate-passwords-button");
 generatePasswordsButton.addEventListener("click", function () {
   for (key in passwords) {
     passwords[key][0] = generateRandom32BitInteger();
@@ -47,6 +47,54 @@ generatePasswordsButton.addEventListener("click", function () {
 
   passwordText = document.getElementById("password-status").innerText =
     "Passwords generated!";
-
   // console.log(passwords);
 });
+
+let yourPasswords = document.getElementById("your-passwords");
+displayYourPasswordsButton = document.getElementById(
+  "display-your-passwords-button"
+);
+displayYourPasswordsButton.addEventListener("click", function () {
+  let yourBits = document.getElementById("your-bits").value;
+  let yourBitsArray = parseTriplet(yourBits);
+
+  if (!passwords["b0"][0]) {
+    yourPasswords.innerText = "Please generate passwords first!";
+    return;
+  }
+
+  // console.log("yourBitsArray.length");
+  // console.log(yourBitsArray.length);
+
+  if (yourBitsArray.length != 3) {
+    yourPasswords.innerText = "Please enter your 3 input bits!";
+    return;
+  }
+  // console.log(yourBitsArray);
+
+  let b0_val = yourBitsArray[0];
+  let b1_val = yourBitsArray[1];
+  let b2_val = yourBitsArray[2];
+
+  let b0_pass = passwords["b0"][b0_val];
+  let b1_pass = passwords["b1"][b1_val];
+  let b2_pass = passwords["b2"][b2_val];
+
+  let passwordDisplayText =
+    "b0 password: " +
+    b0_pass +
+    "\n" +
+    "b1 password: " +
+    b1_pass +
+    "\n" +
+    "b2 password: " +
+    b2_pass;
+  yourPasswords.innerText = passwordDisplayText;
+});
+
+function parseTriplet(yourBits) {
+  let cleanedString = yourBits.replace(/[()]/g, "").trim();
+  let parts = cleanedString.split(",").map((part) => part.trim());
+  let tripletArray = parts.map(Number);
+  return tripletArray;
+}
