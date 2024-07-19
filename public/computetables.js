@@ -80,16 +80,18 @@ circuit = {
   ),
 };
 
-document.getElementById("computeButton").addEventListener("click", function () {
-  // Compute data for tables
-  for (const gateId in circuit) {
-    let gate = circuit[gateId];
-    gate.computeGateTableData(passwords);
-    generateTable(gate);
-    // const currentTable = document.getElementById("table" + key);
-    // currentTable.innerHTML = generateTableHTML(tableData[key]);
-  }
-});
+document
+  .getElementById("compute-button")
+  .addEventListener("click", function () {
+    // Compute data for tables
+    for (const gateId in circuit) {
+      let gate = circuit[gateId];
+      gate.computeGateTableData(passwords);
+      generateTable(gate);
+      // const currentTable = document.getElementById("table" + key);
+      // currentTable.innerHTML = generateTableHTML(tableData[key]);
+    }
+  });
 
 function generateTable(gate) {
   let gateTableData = gate.gateTableData;

@@ -38,14 +38,14 @@ function generateRandom32BitInteger() {
   return BigInt("0x" + hexString);
 }
 
-generatePasswordsButton = document.getElementById("generatePasswordsButton");
+generatePasswordsButton = document.getElementById("generat-passwords-button");
 generatePasswordsButton.addEventListener("click", function () {
   for (key in passwords) {
     passwords[key][0] = generateRandom32BitInteger();
     passwords[key][1] = generateRandom32BitInteger();
   }
 
-  passwordText = document.getElementById("passwordStatus").innerText =
+  passwordText = document.getElementById("password-status").innerText =
     "Passwords generated!";
 
   // console.log(passwords);
