@@ -38,11 +38,9 @@
 .circuit-image {
   display: flex;
   box-sizing: border-box;
-  /* height: auto; */
   height: 60%;
   flex-direction: column;
   flex-grow: 1;
-  /* object-fit: contain; */
 }
 .gatetablecontainer {
   width: 90%;
@@ -50,7 +48,6 @@
 .ccontainer {
   box-sizing: border-box;
   align-items: stretch;
-  /* justify-items: stretch; */
   width: 40%;
 }
 .bodycontainer {
