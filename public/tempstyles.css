@@ -4,23 +4,29 @@ body {
   color: #333; /* Dark gray text color */
   background-color: #f9f9f9; /* Light gray background for the whole page */
   margin: 0;
-  padding: 0;
+  padding: 25px;
 }
-
+step {
+  padding-left: 15px;
+}
 /* Headings */
 h1 {
   color: #4a90e2; /* Blue color for main heading */
   font-size: 2.5em; /* Larger font size */
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-bottom: 20px; /* Space below main heading */
 }
 
 h2 {
   color: #50e3c2; /* Teal color for secondary headings */
   font-size: 2em;
+  margin-bottom: 15px; /* Space below secondary headings */
 }
 
 h3 {
   color: #b0b0b0; /* Gray color for tertiary headings */
+  margin-top: 0; /* Remove top margin */
+  margin-bottom: 10px; /* Space below tertiary headings */
 }
 
 /* Buttons */
@@ -32,6 +38,7 @@ button {
   padding: 10px 20px; /* Padding for button */
   cursor: pointer; /* Pointer cursor on hover */
   transition: background-color 0.3s ease; /* Smooth background color transition */
+  margin-right: 10px; /* Space to the right of the button */
 }
 
 button:hover {
@@ -45,6 +52,7 @@ input[type="text"] {
   padding: 10px; /* Padding inside input */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   transition: border-color 0.3s ease; /* Smooth border color transition */
+  margin-right: 10px; /* Space to the right of the input */
 }
 
 input[type="text"]:focus {
@@ -58,7 +66,10 @@ input[type="text"]:focus {
   border-radius: 8px; /* Rounded corners */
   padding: 15px; /* Padding inside row */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Space below each row */
+  display: flex;
+  align-items: center; /* Align items center vertically */
+  gap: 10px; /* Space between items in the row */
 }
 
 .rcontainer {
@@ -68,16 +79,17 @@ input[type="text"]:focus {
   border-radius: 8px; /* Rounded corners */
   background-color: #ffffff; /* White background for container */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  padding: 15px; /* Padding inside container */
+  padding: 20px; /* Padding inside container */
 }
 
 .ccontainer {
   display: flex;
   flex-direction: column; /* Keep existing column direction */
-  padding: 15px; /* Padding inside container */
+  padding: 20px; /* Padding inside container */
   background-color: #f2f2f2; /* Light gray background */
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-right: 20px; /* Space to the right of the container */
 }
 
 /* Circuit Container */
@@ -86,8 +98,10 @@ input[type="text"]:focus {
   flex-direction: column; /* Keep existing column direction */
   border: 2px solid #4a90e2; /* Blue border */
   border-radius: 8px; /* Rounded corners */
-  padding: 15px; /* Padding inside container */
+  padding: 20px; /* Padding inside container */
   background-color: #ffffff; /* White background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-left: 20px; /* Space to the left of the container */
 }
 
 .circuit-image {
@@ -101,7 +115,7 @@ input[type="text"]:focus {
 table {
   border-collapse: collapse; /* Collapse borders */
   width: 100%;
-  margin: 20px 0;
+  margin: 20px 0; /* Space above and below the table */
 }
 
 th,
@@ -115,13 +129,33 @@ th {
   color: white; /* White text for headers */
 }
 
+/* Additional Elements */
+.calcblock {
+  background: linear-gradient(
+    145deg,
+    #ffffff,
+    #f1f1f1
+  ); /* Gradient background */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding inside block */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+  margin-bottom: 20px; /* Space below each calcblock */
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .ccontainer {
     width: 100%; /* Full width on smaller screens */
+    margin-right: 0; /* Remove right margin on smaller screens */
   }
 
   .rcontainer {
     flex-direction: column; /* Stack vertically on smaller screens */
+    padding: 10px; /* Reduced padding on smaller screens */
+  }
+
+  .circuitcontainer {
+    margin-left: 0; /* Remove left margin on smaller screens */
+    padding: 10px; /* Reduced padding on smaller screens */
   }
 }
