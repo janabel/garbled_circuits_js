@@ -76,7 +76,8 @@ circuit = {
     (gateId = 5),
     (leftGateId = 1),
     (rightGateId = 4),
-    (gateFunction = orGate)
+    (gateFunction = orGate),
+    (outGate = true)
   ),
 };
 
@@ -135,9 +136,7 @@ function generateTable(gate) {
   th2.textContent =
     "$Enc_{" +
     nicePassConcatString +
-    "}(p_{G(" +
-    nicePassConcatString +
-    ")}^{(" +
+    "}(p_{G(b_l, b_r)}^{(" +
     gate.gateId +
     ")})$";
   headerRow.appendChild(th2);
@@ -165,9 +164,12 @@ function generateTable(gate) {
 
   table.appendChild(tbody);
 
+  let gates = document.getElementById("gates");
   // Append the table to the body (or any other container element)
-  document.body.appendChild(tabletitle);
-  document.body.appendChild(table);
+  // document.body.appendChild(tabletitle);
+  // document.body.appendChild(table);
+  gates.appendChild(tabletitle);
+  gates.appendChild(table);
 
   MathJax.typeset(); // Process the newly added LaTeX
 }

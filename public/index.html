@@ -1,6 +1,9 @@
 <html>
 	<head>
 		<style>
+			.title {
+				padding: 20px;
+			}
 			.row {
 				margin-bottom: 20px;
 			}
@@ -11,81 +14,208 @@
 			.button {
 				margin-right: 10px;
 			}
-			.circuit-image {
-				width: 80%;
-      			height: auto;
+			
+			.rcontainer, .circuitcontainer, .gatetablecontainer, .ccontainer {
+			display: flex;
+			align-items: start;
+			background-color: rgb(190, 173, 230);
+			text-align: center;
+			box-sizing: border-box;
+			/* padding: 20px; */
+			/* margin: 20px; */
 			}
-			.container {
-        display: flex;
-        justify-content: space-around; /* Adjusts spacing around the blocks */
-      }
-      .block {
-        flex: 1;
-        /* width: 30%; */
-        padding: 20px;
-        background-color: lightblue;
-        text-align: center;
-        border: 1px solid black;
-      }
+			.rcontainer {
+			flex-direction: row;
+			align-content: start;
+			justify-content: start;
+			border: 1px solid black;
+			}
+			.circuitcontainer, .ccontainer, .gatetablecontainer {
+			flex-direction: column;
+			justify-content: start;
+			}
+			.circuitcontainer, .gatetablecontainer {
+				display: flex;
+				/* width: auto; */
+				flex-grow: 1;
+			}
+			.circuit-image {
+				display: flex;
+				box-sizing: border-box;
+				width: 45%;
+				height: auto;
+				box-sizing: border-box;
+			}
+			.gatetablecontainer {
+			width: 90%;
+			}
+			.ccontainer {
+            box-sizing: border-box;
+            align-items: stretch;
+			justify-items: stretch;
+			width: 40%
+			}
+			.bodycontainer {
+			display: flex;
+			justify-content: start; /* Adjusts spacing around the blocks */
+			align-items: flex-start;
+			flex-direction: row;
+			width: 100%;
+			height: 100%;
+			}
+			.block, .calcblock {
+			flex: 1 1 calc(33% - 40px);
+			padding: 20px;
+			background-color: lightblue;
+			text-align: left;
+			/* border: 1px solid black; */
+			box-sizing: border-box;
+			}
+			.calcblock {
+			display: flex;
+			flex-direction: column; 
+			}
+			h1, h2 {
+				padding-left: 20px;
+				padding-top: 20px;
+			}
+			h3 {
+				padding-top: 0;
+			}
+			tabletitle {
+				font-size: 24px;
+				margin: 12px;
+			}
+			table {
+				width: 50%;
+				border-collapse: collapse;
+				margin: 24px;
+			}
+			th,
+			td {
+				border: 1px solid black;
+				padding: 8px;
+				text-align: left;
+			}
+			th {
+				background-color: #f2f2f2;
+				font-size: 18px;
+			}
 		</style>
 	</head>
 	<body>
-	<div class="container">
-		<div class="block">
-		<h1>Cryptography Calculator [:¨:]</h1>
+		<script src="mathjax-config.js" type="text/javascript"></script>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script
+		id="MathJax-script"
+		async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+		></script>
 
-		<h2>Hashing</h2>
-		<div id="hash-div" class="row">
-			<input type="text" id="hash-input" placeholder="String to hash"> </input>
-			<button id="hash-button">Compute hash</button>
-			<div id="hash-output">Your hash here</div>
+
+
+		<h1>Interactive Garbled Circuits</h1>
+
+		<h2>1. Oblivious Transfer (1-of-2)</h2>
+
+		<div>
+			<div id="password-button-row" class="row">
+				<button id="generate-passwords-button">Generate passwords</button>
+				<div id="password-status">Please generate passwords</div>
+			</div>
+			
+			<h3>ElGamal</h3>
+			<div id="key-gen" class="row">
+				<button id="keygen-button">Generate your key</button>
+				<div id="keygen-out-priv">Your private key s: </div>
+				<div id="keygen-out-public">Your public key g^s:</div>
+			</div>
+
+			<div id="elg-enc" class="row">
+				<input type="text" id="pub-key" placeholder="Public Key"> </input>
+				<input type="text" id="pub-enc-input" placeholder="Plaintext"> </input>
+				<button id="elg-enc-button">Encrypt</button>
+				<div id="elg-enc-output">Ciphertext here</div>
+			</div>
+
+			<div id="elg-dec" class="row">
+				<input type="text" id="private-key" placeholder="Private Key"> </input>
+				<input type="text" id="private-dec-input" placeholder="Ciphtertext"> </input>
+				<button id="elg-dec-button">Decrypt</button>
+				<div id="elg-dec-output">Plaintext here</div>
+			</div>
 		</div>
 
-		<h2>AES</h2>
-		<div id="eas-enc" class="row">
-			<input type="text" id="enc-key" placeholder="Key"> </input>
-			<input type="text" id="enc-input" placeholder="Plaintext"> </input>
-			<button id="enc-button">Encrypt</button>
-			<div id="enc-output">Ciphertext here</div>
-		</div>
-		<div id="eas-div" class="row">
-			<input type="text" id="dec-key" placeholder="Key"> </input>
-			<input type="text" id="dec-input" placeholder="Ciphertext"> </input>
-			<button id="dec-button">Decrypt</button>
-			<div id="dec-output">Plaintext here</div>
+	
+		<div id="display-your-passwords-button-row" class="row">
+				  <input type="text" id="your-bits" placeholder="Your bits (b0, b1, b2) (enter as ordered pair)"> </input>
+			<button id="display-your-passwords-button">Get my passwords</button>
+			<div id="your-passwords">Your passwords will appear here. Enter your bits as "(b0, b1, b2)".</div>
 		</div>
 
-		<h2>ElGamal</h2>
-		<div id="key-gen" class="row">
-			<button id="keygen-button">Generate your key</button>
-			<div id="keygen-out-priv">Your private key s: </div>
-			<div id="keygen-out-public">Your public key g^s:</div>
+		
+		<div class="rcontainer">
+			<div class="ccontainer">
+
+				<h2 style="text-align: left;">Cryptography Calculator [::]</h2>
+
+				<div class="calcblock">
+					<h3>Hashing (SHA256)</h3>
+					<div id="hash-div" class="row">
+						<input type="text" id="hash-input" placeholder="String to hash"> </input>
+						<button id="hash-button">Compute hash</button>
+						<div id="hash-output">Your hash here</div>
+					</div>
+				</div>
+
+				<div class="calcblock">
+					<h3>Symmetric Key Encryption (AES)</h3>
+					<div id="eas-enc" class="row">
+						<input type="text" id="enc-key" placeholder="Key"> </input>
+						<input type="text" id="enc-input" placeholder="Plaintext"> </input>
+						<button id="enc-button">Encrypt</button>
+						<div id="enc-output">Ciphertext here</div>
+					</div>
+					<div id="eas-div" class="row">
+						<input type="text" id="dec-key" placeholder="Key"> </input>
+						<input type="text" id="dec-input" placeholder="Ciphertext"> </input>
+						<button id="dec-button">Decrypt</button>
+						<div id="dec-output">Plaintext here</div>
+					</div>
+				</div>
+			
+			</div>
+
+			<div id="circuit-diagram" class="circuitcontainer">
+				<h2>Circuit Diagram</h2>
+				<img src="circuit_diagram.png" alt="Diagram of circuit" class="circuit-image">
+			</div>
+		
 		</div>
 
-		<div id="elg-enc" class="row">
-			<input type="text" id="pub-key" placeholder="Public Key"> </input>
-			<input type="text" id="pub-enc-input" placeholder="Plaintext"> </input>
-			<button id="elg-enc-button">Encrypt</button>
-			<div id="elg-enc-output">Ciphertext here</div>
-		</div>
 
-		<div id="elg-dec" class="row">
-			<input type="text" id="private-key" placeholder="Private Key"> </input>
-			<input type="text" id="private-dec-input" placeholder="Ciphtertext"> </input>
-			<button id="elg-dec-button">Decrypt</button>
-			<div id="elg-dec-output">Plaintext here</div>
+		<div class="bodycontainer">
+
+			<div class="gatetablecontainer">
+				<h2>Garbled Gates</h2>
+				  <button id="compute-button">
+					Compute garbled gate table values to display below.
+				  </button>
+				  <div id="gates"></div>
+
+			</div>
 		</div>
-		</div>
-		<div class="block">
-			<h1>Circuit Diagram</h1>
-  			<img src="circuit_diagram.png" alt="Diagram of circuit" class="circuit-image">
-		</div>
+	
 	</div>
 
-		<script type="module" src="./sha256.js"></script>
-		<script type="module" src="./elgamal.js"></script>
-		<script type="module" src="./aes.js"></script>
-        <script type="module" src="../node_modules/crypto-js/crypto-js.js"></script>
-		<script type="module" src="../node_modules/elgamal/src/elgamal.js"></script>
+	<script type="module" src="./sha256.js"></script>
+	<script type="module" src="./elgamal.js"></script>
+	<script type="module" src="./aes.js"></script>
+    <script type="module" src="../node_modules/crypto-js/crypto-js.js"></script>
+	<script type="module" src="../node_modules/elgamal/src/elgamal.js"></script>
+	<script type="module" src="generatepasswords.js"></script>
+    <script type="module" src="gate.js"></script>
+    <script type="module" src="computetables.js"></script>
+
 	</body>
 </html>

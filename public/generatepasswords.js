@@ -47,7 +47,7 @@ generatePasswordsButton.addEventListener("click", function () {
 
   passwordText = document.getElementById("password-status").innerText =
     "Passwords generated!";
-  // console.log(passwords);
+  console.log(passwords);
 });
 
 let yourPasswords = document.getElementById("your-passwords");

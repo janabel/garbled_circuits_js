@@ -3,11 +3,18 @@ import CryptoJS from "crypto-js";
 
 export class BinaryGate {
   // Constructor method to initialize the object
-  constructor(gateId, leftGateId, rightGateId, gateFunction = undefined) {
+  constructor(
+    gateId,
+    leftGateId,
+    rightGateId,
+    gateFunction = undefined,
+    outGate = false
+  ) {
     (this.gateId = gateId), (this.leftGateId = leftGateId);
     this.rightGateId = rightGateId;
     this.gateFunction = gateFunction;
     this.gateTableData = { passHashes: [], passEncryptions: [] }; // (key, val) = (hash(passes), encryp(passes))
+    this.outGate = outGate;
 
     console.assert(
       this.gateFunction.length == 2,
@@ -53,7 +60,20 @@ export class BinaryGate {
       console.log("enc_output_pass = " + enc_output_pass);
 
       this.gateTableData["passHashes"].push(hash_concat_pass);
-      this.gateTableData["passEncryptions"].push(enc_output_pass);
+      // adding either enc(pass for b_out) or enc(b_out) encryptions to table data, depending on whether or not gate is output gate
+      if (this.outGate) {
+        let enc_output = CryptoJS.AES.encrypt(
+          b_out.toString(),
+          concat_pass
+        ).toString();
+        this.gateTableData["passEncryptions"].push(enc_output);
+      } else {
+        let enc_output_pass = CryptoJS.AES.encrypt(
+          output_pass,
+          concat_pass
+        ).toString();
+        this.gateTableData["passEncryptions"].push(enc_output_pass);
+      }
     }
 
     console.log(this.gateTableData);
@@ -62,11 +82,12 @@ export class BinaryGate {
 
 export class SingleGate {
   // Constructor method to initialize the object
-  constructor(gateId, inGateId, gateFunction = undefined) {
+  constructor(gateId, inGateId, gateFunction = undefined, outGate = false) {
     this.gateId = gateId;
     this.inGateId = inGateId;
     this.gateFunction = gateFunction;
     this.gateTableData = { passHashes: [], passEncryptions: [] }; // (key, val) = (hash(passes), encryp(passes))
+    this.outGate = outGate;
 
     console.assert(
       this.gateFunction.length == 1,
@@ -95,10 +116,23 @@ export class SingleGate {
       console.log("pass = " + pass);
       let hash_pass = CryptoJS.SHA256(pass).toString(CryptoJS.enc.Hex);
       console.log("hash_pass = " + hash_pass);
-      let enc_output_pass = CryptoJS.AES.encrypt(output_pass, pass).toString();
 
       this.gateTableData["passHashes"].push(hash_pass);
-      this.gateTableData["passEncryptions"].push(enc_output_pass);
+
+      // adding either enc(pass for b_out) or enc(b_out) encryptions to table data, depending on whether or not gate is output gate
+      if (this.outGate) {
+        let enc_output = CryptoJS.AES.encrypt(
+          b_out.toString(),
+          pass
+        ).toString();
+        this.gateTableData["passEncryptions"].push(enc_output);
+      } else {
+        let enc_output_pass = CryptoJS.AES.encrypt(
+          output_pass,
+          pass
+        ).toString();
+        this.gateTableData["passEncryptions"].push(enc_output_pass);
+      }
     }
 
     console.log(this.gateTableData);
