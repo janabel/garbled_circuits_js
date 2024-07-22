@@ -1,107 +1,6 @@
 <html>
 	<head>
-		<style>
-			.title {
-				padding: 20px;
-			}
-			.row {
-				margin-bottom: 20px;
-			}
-			.input-box, .output-box {
-				width: 100px;
-				margin-right: 10px;
-			}
-			.button {
-				margin-right: 10px;
-			}
-			
-			.rcontainer, .circuitcontainer, .gatetablecontainer, .ccontainer {
-			display: flex;
-			align-items: start;
-			background-color: rgb(190, 173, 230);
-			text-align: center;
-			box-sizing: border-box;
-			/* padding: 20px; */
-			/* margin: 20px; */
-			}
-			.rcontainer {
-			flex-direction: row;
-			align-content: start;
-			justify-content: start;
-			border: 1px solid black;
-			}
-			.circuitcontainer, .ccontainer, .gatetablecontainer {
-			flex-direction: column;
-			justify-content: start;
-			}
-			.circuitcontainer, .gatetablecontainer {
-				display: flex;
-				/* width: auto; */
-				flex-grow: 1;
-			}
-			.circuit-image {
-				display: flex;
-				box-sizing: border-box;
-				width: 45%;
-				height: auto;
-				box-sizing: border-box;
-			}
-			.gatetablecontainer {
-			width: 90%;
-			}
-			.ccontainer {
-            box-sizing: border-box;
-            align-items: stretch;
-			justify-items: stretch;
-			width: 40%
-			}
-			.bodycontainer {
-			display: flex;
-			justify-content: start; /* Adjusts spacing around the blocks */
-			align-items: flex-start;
-			flex-direction: row;
-			width: 100%;
-			height: 100%;
-			}
-			.block, .calcblock {
-			flex: 1 1 calc(33% - 40px);
-			padding: 20px;
-			background-color: lightblue;
-			text-align: left;
-			/* border: 1px solid black; */
-			box-sizing: border-box;
-			}
-			.calcblock {
-			display: flex;
-			flex-direction: column; 
-			}
-			h1, h2 {
-				padding-left: 20px;
-				padding-top: 20px;
-			}
-			h3 {
-				padding-top: 0;
-			}
-			tabletitle {
-				font-size: 24px;
-				margin: 12px;
-			}
-			table {
-				width: 50%;
-				border-collapse: collapse;
-				margin: 24px;
-			}
-			th,
-			td {
-				border: 1px solid black;
-				padding: 8px;
-				text-align: left;
-			}
-			th {
-				background-color: #f2f2f2;
-				font-size: 18px;
-			}
-		</style>
+		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
 		<script src="mathjax-config.js" type="text/javascript"></script>
@@ -111,8 +10,6 @@
 		async
 		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 		></script>
-
-
 
 		<h1>Interactive Garbled Circuits</h1>
 
@@ -156,7 +53,7 @@
 		
 		<div class="rcontainer">
 			<div class="ccontainer">
-
+				
 				<h2 style="text-align: left;">Cryptography Calculator [::]</h2>
 
 				<div class="calcblock">

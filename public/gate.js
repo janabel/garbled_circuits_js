@@ -2,7 +2,6 @@ import { concat } from "ethers";
 import CryptoJS from "crypto-js";
 
 export class BinaryGate {
-  // Constructor method to initialize the object
   constructor(
     gateId,
     leftGateId,
@@ -81,7 +80,6 @@ export class BinaryGate {
 }
 
 export class SingleGate {
-  // Constructor method to initialize the object
   constructor(gateId, inGateId, gateFunction = undefined, outGate = false) {
     this.gateId = gateId;
     this.inGateId = inGateId;
