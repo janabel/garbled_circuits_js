@@ -5,9 +5,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "devmain": "npx parcel public/index.html --port 1234",
-    "devtables": "npx parcel public/garbledgates.html --port 1235",
-    "devdiagram": "npx parcel public/circuitdisplay.html --port 1236"
+    "devmain": "npx parcel public/index.html --port 1237",
+    "devtables": "npx parcel public/garbledgates.html --port 1238",
+    "devdiagram": "npx parcel public/circuitdisplay.html --port 1239"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,8 @@
     "inherits": "^2.0.4",
     "jsbn": "^1.1.0",
     "merge-descriptors": "^2.0.0",
+    "react": "^18.3.1",
+    "react-router-dom": "^6.26.1",
     "safe-buffer": "^5.2.1"
   },
   "devDependencies": {

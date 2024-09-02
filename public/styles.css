@@ -1,5 +1,4 @@
 .title {
-  padding: 20px;
 }
 .row {
   margin-bottom: 20px;
@@ -67,14 +66,7 @@
   box-sizing: border-box;
   flex-grow: 1;
 }
-h1,
-h2 {
-  padding-left: 20px;
-  padding-top: 20px;
-}
-h3 {
-  padding-top: 0;
-}
+
 tabletitle {
   font-size: 24px;
   margin: 12px;
